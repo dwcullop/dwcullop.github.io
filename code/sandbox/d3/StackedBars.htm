@@ -34,7 +34,7 @@ form {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var n = 4, // number of layers
+var n = 2, // number of layers
     m = 58, // number of samples per layer
     stack = d3.layout.stack(),
     layers = stack(d3.range(n).map(function() { return bumpLayer(m, .1); })),
@@ -46,7 +46,8 @@ var margin = {top: 40, right: 10, bottom: 20, left: 10},
     height = 500 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal()
-    .domain(d3.range(m))
+    //.domain(d3.range(m))
+    .domain(['Totals'])
     .rangeRoundBands([0, width], .08);
 
 var y = d3.scale.linear()
